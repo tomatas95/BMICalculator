@@ -177,10 +177,13 @@ hr {
                                             if($bmi < 18.5){
                                                 $result = 'text-danger';
                                                 $info = ', which means you are underweight!';
-                                            }elseif ($bmi < 25) {
+                                            }elseif ($bmi > 18.5 && $bmi < 24.9) {
                                                 $result = 'text-success';
-                                                $info = ', which means you within a healthy weight range!';
-                                            }else {
+                                                $info = ', which means you within a healthy weight!';
+                                            }elseif($bmi > 25 && $bmi < 29.9) {
+                                                $result = 'text-warning';
+                                                $info = ', which means you are overweight!';
+                                            }else{
                                                 $result = 'text-danger';
                                                 $info = ', which means you are obese!';
                                             }
@@ -191,6 +194,27 @@ hr {
                                     @endif
                                 </div>
                             </div>
+                            <div class="card">
+                                <div class="card-body">
+                                  <!-- Title -->
+                                  <h3 class="h4">BMI Info</h3>
+                                  <p class="mt-4 mb-6">
+                                    Less than 18.5 =  <span class="text-danger">Underweight</span>
+                                  </p>
+                                  <p class="mt-4 mb-6">
+                                    Between 18.5 - 24.9 = <span class="text-success">Healthy Weight</span>
+                                </p>
+                                  <p class="mt-4 mb-6">
+                                    Between 25 - 29.9 = <span class="text-warning">Overweight</span>
+                                </p>
+                                <p class="mt-4 mb-6">
+                                    Over 30 = <span class="text-danger"> Obese</span>
+                                </p>
+                                  <a class="ml-10" href="https://patient.info/doctor/bmi-calculator-calculator" target="_blank" class="btn btn-sm btn-primary">
+                                    Learn more about BMI
+                                  </a>
+                                </div>
+                              </div>
                         </div>
                     </div>
                 </div>
